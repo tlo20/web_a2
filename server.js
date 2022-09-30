@@ -26,7 +26,7 @@ app.get("/about",(req,res)=>{
     res.sendFile(path.join(__dirname,"/views/about.html"))
 })
 
-app.get("/employee",(req,res)=>{
+app.get("/employees",(req,res)=>{
     res.type('json')
     data.getAllEmployees().then(result=>res.send(result),err=> res.send(err))
 })
