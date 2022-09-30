@@ -28,18 +28,18 @@ app.get("/about",(req,res)=>{
 
 app.get("/employees",(req,res)=>{
     res.type('json')
-    data.getAllEmployees().then(result=>res.send(result),err=> res.send(err))
+    data.getAllEmployees().then(result=>res.send(result),err=> res.send({message:err}))
 })
 
 
 app.get("/managers",(req,res)=>{
     res.type('json')
-    data.getManagers().then(result=>{res.send(result)},err=> res.send(err))
+    data.getManagers().then(result=>{res.send(result)},err=> res.send({message:err}))
 })
 
 app.get("/departments",(req,res)=>{
     res.type('application/json')
-    data.getDepartments().then(result=>{res.send(result)},err=> res.send(err))
+    data.getDepartments().then(result=>{res.send(result)},err=> res.send({message:err}))
 })
 
 
